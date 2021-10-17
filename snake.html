@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Let's play Doodle Snake</title>
+    <link rel="stylesheet" href="snake.css">
+</head>
+<body>
+    <div id="box">
+        <span class="box-title">Let's play Doodle Snake !</span>
+        <div id="snake"></div>
+        <div class="options">
+            <span class='score' id="score">score : 0</span>
+            <span class='time' id="time">time : 0</span>
+            <button onclick='start()' class='start'>start</button>
+            <button onclick='stop()' class='end'>end</button>
+            <button onclick='restart()' class='restart'>restart</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="snake.js"></script>
+    <script>
+        let snake = document.getElementById('snake');
+        let score = document.getElementById('score');
+        let time = document.getElementById('time');
+        
+        let sp = new snakeProxy();
+        sp.init(snake, score, time);
+        
+        function start() {
+            sp.start();
+        }
+        
+        function stop() {
+            sp.stop();
+        }
+
+        function restart() {
+            sp.restart();
+        }
+    </script>
+</body>
+</html>
